@@ -25,6 +25,11 @@ public class GradeEvaluator {
 
 	}
 
+	/**
+	 * Reads the input until a value in the range 0-100 is entered and returns it
+	 * @param sc the Scanner
+	 * @return the value read by the scanner
+	 */
 	static int readInt(Scanner sc) {
 		int ret = -1;
 		while (ret < 0) {
