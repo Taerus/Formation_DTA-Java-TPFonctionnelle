@@ -2,9 +2,10 @@ package org.formation.fonctionnelle;
 
 public class StringvsBuilder {
 
+	@SuppressWarnings("unused")
 	public static void main(String[] args) {
 		
-		final int N = 100000;
+		final int N = 10000;
 		
 		String lievre;
 		String tortue = "";
@@ -25,8 +26,6 @@ public class StringvsBuilder {
 		}
 		lievre = strBuilder.toString();
 		System.out.println("lièvre : " + (System.currentTimeMillis() - time));
-		
-		
 		
 	}
 
