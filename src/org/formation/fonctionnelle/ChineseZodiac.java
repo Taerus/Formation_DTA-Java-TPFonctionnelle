@@ -10,7 +10,20 @@ public class ChineseZodiac {
 		
 		System.out.println("Entrez votre Année de naissance :");
 		
-		switch (readInt(sc) % 12) {
+		Zodiac sign = Zodiac.getByDate(readInt(sc));
+		System.out.print(sign.name);
+		
+		switch (sign) {
+		case RABBIT:
+			System.out.println(" =:3");
+			break;
+			
+		default :
+			System.out.println("");
+			break;
+		}
+		
+		/*switch (readInt(sc) % 12) {
 		case 0:
 			System.out.println("Singe");
 			break;
@@ -48,9 +61,8 @@ public class ChineseZodiac {
 			System.out.println("Mouton");
 			break;
 		default:
-			System.out.println("=O");
 			break;
-		}
+		}*/
 		
 		sc.close();
 
@@ -72,6 +84,54 @@ public class ChineseZodiac {
 			}
 		} while(ret < 0);
 		return ret;
+	}
+	
+	static enum Zodiac {
+		MONKEY 	("Singe"),
+		ROOSTER ("Coq"),
+		DOG 	("Chien"),
+		PIG 	("Porc"),
+		RAT 	("Rat"),
+		OX 		("Boeuf"),
+		TIGER 	("Tigre"),
+		RABBIT 	("Lapin"),
+		DRAGON 	("Dragon"),
+		SNAKE 	("Serpent"),
+		HORSE 	("Cheval"),
+		SHEEP 	("Mouton");
+		
+		Zodiac(String name) {
+			this.name = name;
+		}
+		
+		public final String name;
+		
+		/**
+		 * Returns the sign associated to its Id
+		 * @param id the identifier of the sign
+		 * @return the sign
+		 * @throws Exception if the Id is not in the range 0-11
+		 */
+		public static Zodiac getById(int id) throws IndexOutOfBoundsException {
+			Zodiac sign = null;
+			
+			try {
+				sign = (Zodiac.values())[id];
+			} catch (ArrayIndexOutOfBoundsException e) {
+				throw new IndexOutOfBoundsException("Invalid sign Id");
+			}
+			
+			return sign;
+		}
+		
+		/**
+		 * Returns the sign associated to a year
+		 * @param year the year of the sign you are looking for
+		 * @return the sign associated to a year
+		 */
+		public static Zodiac getByDate(int year) {
+			return (Zodiac.values())[year % 12];
+		}
 	}
 
 }
