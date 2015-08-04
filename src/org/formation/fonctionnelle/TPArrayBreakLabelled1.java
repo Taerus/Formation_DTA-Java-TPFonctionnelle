@@ -38,8 +38,7 @@ public class TPArrayBreakLabelled1 {
 	/**
 	 * Reads the input until an integer value is entered and returns it
 	 * 
-	 * @param sc
-	 *            the Scanner
+	 * @param sc the Scanner
 	 * @return the value read by the scanner
 	 */
 	static int readInt(Scanner sc) {
