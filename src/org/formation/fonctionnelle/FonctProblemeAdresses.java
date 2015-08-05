@@ -20,7 +20,7 @@ public class FonctProblemeAdresses {
 				"kevin@wanadoo.fr"
 		};
 		
-		HashMap<String, Integer> domainMap = new HashMap<String, Integer>();
+		HashMap<String, Integer> domainMap = new HashMap<>();
 		
 		for ( String email : emails ) {
 			System.out.println(email);
@@ -31,7 +31,7 @@ public class FonctProblemeAdresses {
 		
 		System.out.println("===================================");
 		
-		HashMap<String, Float> domainRatioMap = new HashMap<String, Float>();
+		HashMap<String, Float> domainRatioMap = new HashMap<>();
 		
 		for ( Map.Entry<String, Integer> peer : domainMap.entrySet()) {
 			float p = (float) peer.getValue() / (float) emails.length * 100.f;
